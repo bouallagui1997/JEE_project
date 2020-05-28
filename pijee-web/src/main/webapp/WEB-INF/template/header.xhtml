@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	>
+
+	<header id="header">
+		<div class="header-top">
+            <div class="container">
+                <div class="border-bottom-1">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-4 col-12">
+                            <div class="welcome-area">
+                                <h:form>
+<h:outputText value="Welcome    #{loginBean.getLogin()}" />
+<br/>
+<h:outputFormat value="Bonjour!">
+<f:param value="#{loginBean.login}" />
+</h:outputFormat> |
+<h:commandLink value="Déconnexion" action="#{loginBean.doLogout()}" />
+</h:form>
+                            </div>
+                        </div>
+                        <div class="col-lg-8 col-md-8 col-12">
+                            <div class="account-curr-lang-wrap f-right">
+                                <ul>
+                                    <li class="top-hover">
+                                        <a href="#">My Account <i class="ion-chevron-down"></i></a>
+                                        <ul>
+                                            <li><a href="wishlist.html">Wishlist  </a></li>
+                                    
+                                        </ul>
+                                    </li>
+                                    <li class="top-hover">
+                                        <a href="#">$Doller (US) <i class="ion-chevron-down"></i></a>
+                                        <ul>
+                                    
+                                        </ul>
+                                    </li>
+                                    <li>
+                                       
+                                        <ul>
+                                         </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom transparent-bar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-4 col-6">
+                        <div class="logo">
+                            <a href="index.html">
+                                
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-9 col-md-8 col-6">
+                        <div class="header-bottom-right">
+                            <div class="main-menu">
+                                <nav>
+                                    <ul>
+                                        <li class="top-hover">
+                                            <a href="#">home</a>
+                                  
+                                        
+                                        </li>
+                                        <li><a href="about-us.html">about</a></li>
+                                        <li class="mega-menu-position top-hover">
+                                            <a href="#">shop</a>
+                                            <ul class="mega-menu">
+                                                <li>
+                                                    <ul>
+                                                        <li class="mega-menu-title">Categories 01</li>
+                                                        
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li class="mega-menu-title">Categories 02</li>
+                                                      
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li class="mega-menu-title">Categories 03</li>
+                                                       
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <ul>
+                                                        <li class="mega-menu-title">Categories 04</li>
+                                                        
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="top-hover">
+                                            <a href="blog-left-sidebar.html">blog</a>
+                                            <ul class="submenu">
+                                                <li><a href="blog-masonry.html">Blog Masonry</a></li>
+                                                <li>
+                                                    <a href="#">Blog Standard <span><i class="ion-ios-arrow-right"></i></span></a>
+                                                    <ul class="lavel-menu">
+                                       
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="#">Post Types <span><i class="ion-ios-arrow-right"></i></span> </a>
+                                                    <ul class="lavel-menu">
+                                                       
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li class="top-hover">
+                                            <a href="#">pages</a>
+                                            <ul class="submenu">
+                                                <li><a href="about-us.html">about us </a></li>
+                                                <li><a href="shop.html">shop Grid</a></li>
+                                                <li><a href="shop-list.html">shop list</a></li>
+                                                <li><a href="product-details.html">product details</a></li>
+                                                <li><a href="cart-page.html">cart page</a></li>
+                                                <li><a href="checkout.html">checkout</a></li>
+                                                <li><a href="wishlist.html">wishlist</a></li>
+                                                <li><a href="my-account.html">my account</a></li>
+                                                <li><a href="login-register.html">login / register</a></li>
+                                                <li><a href="contact.html">contact</a></li>
+                                                <li><a href="testimonial.html">Testimonials</a></li>
+                                            </ul>
+                                        </li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
+                                </nav>
+                            </div>
+                            <div class="header-cart">
+                                <a href="#">
+                                    <div class="cart-icon">
+                                        <i class="ion-bag"></i>
+                                        <span class="count-style">02</span>
+                                    </div>
+                                    <div class="cart-text">
+                                        <span class="digit">My Cart</span>
+                                        <span>$0.00</span>
+                                    </div>
+                                </a>
+                                <div class="shopping-cart-content">
+                                    <ul>
+                                        <li class="single-shopping-cart">
+                                            <div class="shopping-cart-img">
+                                               
+                                            </div>
+                                            <div class="shopping-cart-title">
+                                                <h4><a href="#">Phantom Remote </a></h4>
+                                                <h6>Qty: 02</h6>
+                                                <span>$260.00</span>
+                                            </div>
+                                            <div class="shopping-cart-delete">
+                                                <a href="#"><i class="ion ion-close"></i></a>
+                                            </div>
+                                        </li>
+                                        <li class="single-shopping-cart">
+                                            <div class="shopping-cart-img">
+                                            </div>
+                                            <div class="shopping-cart-title">
+                                                <h4><a href="#">Phantom Remote</a></h4>
+                                                <h6>Qty: 02</h6>
+                                                <span>$260.00</span>
+                                            </div>
+                                            <div class="shopping-cart-delete">
+                                                <a href="#"><i class="ion ion-close"></i></a>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="shopping-cart-total">
+                                        <h4>Shipping : <span>$20.00</span></h4>
+                                        <h4>Total : <span class="shop-total">$260.00</span></h4>
+                                    </div>
+                                    <div class="shopping-cart-btn">
+                                        <a href="cart-page.html">view cart</a>
+                                        <a href="checkout.html">checkout</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mobile-menu-area">
+                    <div class="mobile-menu">
+                        <nav id="mobile-menu-active">
+                            <ul class="menu-overflow">
+                                <li>
+                                    <a href="#">HOME</a>
+                                    <ul>
+                                        <li><a href="index.html">home version 1</a></li>
+                                        <li><a href="index-2.html">home version 2</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">pages</a>
+                                    <ul>
+                                        <li><a href="about-us.html">about us </a></li>
+                                        <li><a href="shop.html">shop Grid</a></li>
+                                        <li><a href="shop-list.html">shop list</a></li>
+                                        <li><a href="product-details.html">product details</a></li>
+                                        <li><a href="cart-page.html">cart page</a></li>
+                                        <li><a href="checkout.html">checkout</a></li>
+                                        <li><a href="wishlist.html">wishlist</a></li>
+                                        <li><a href="my-account.html">my account</a></li>
+                                        <li><a href="login-register.html">login / register</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                        <li><a href="testimonial.html">Testimonials</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="shop.html"> Shop </a>
+                                    <ul>
+                                        <li>
+                                            <a href="#">Categories 01</a>
+                                            <ul>
+                               
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Categories 02</a>
+                                            <ul>
+                                 
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Categories 03</a>
+                                            <ul>
+                                  
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Categories 04</a>
+                                            <ul>
+                                     	
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#">BLOG</a>
+                                    <ul>
+                                        <li><a href="blog-masonry.html">Blog Masonry</a></li>
+                                        <li>
+                                            <a href="#">Blog Standard</a>
+                                            <ul>
+                                         
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <a href="#">Post Types</a>
+                                            <ul>
+                               
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li><a href="contact.html"> Contact us </a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</header>
+
+				<!-- #header -->
+</ui:composition>

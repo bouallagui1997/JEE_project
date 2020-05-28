@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:ct="http://www.chartistjsf.org/charts">
+<!-- Mirrored from www.primefaces.org/prestige/sample.xhtml by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 18:15:53 GMT -->
+<!-- Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<!-- /Added by HTTrack -->
+ 
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<link rel="shortcut icon" type="image/x-icon"
+	href="prestige-layout/images/favicon.html" />
+<link type="text/css" rel="stylesheet"
+	href="../javax.faces.resource/theme.cssad81.css?ln=primefaces-prestige-deepblue-light" />
+<link type="text/css" rel="stylesheet"
+	href="../javax.faces.resource/fa/font-awesome.css68f8.css?ln=primefaces&amp;v=7.0" />
+<link type="text/css" rel="stylesheet"
+	href="../javax.faces.resource/components.css68f8.css?ln=primefaces&amp;v=7.0" />
+<script type="text/javascript"
+	src="../javax.faces.resource/jquery/jquery.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+<script type="text/javascript"
+	src="../javax.faces.resource/core.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+<script type="text/javascript"
+	src="../javax.faces.resource/components.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+<script type="text/javascript"
+	src="../javax.faces.resource/jquery/jquery-plugins.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+<link type="text/css" rel="stylesheet"
+	href="../javax.faces.resource/keyboard/keyboard.css68f8.css?ln=primefaces&amp;v=7.0" />
+<script type="text/javascript"
+	src="../javax.faces.resource/keyboard/keyboard.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+<script type="text/javascript"
+	src="../javax.faces.resource/touch/touchswipe.js68f8.xhtml?ln=primefaces&amp;v=7.0"></script>
+<link type="text/css" rel="stylesheet"
+	href="../javax.faces.resource/css/primeflex.css390d.css?ln=prestige-layout" />
+<link type="text/css" rel="stylesheet"
+	href="../javax.faces.resource/css/layout-canvas.css390d.css?ln=prestige-layout" />
+<script type="text/javascript">if(window.PrimeFaces){PrimeFaces.settings.locale='en_US';PrimeFaces.settings.projectStage='Development';}</script>
+<title>Sample</title>
+<script type="text/javascript"
+	src="../javax.faces.resource/js/layout.js390d.xhtml?ln=prestige-layout"></script>
+<style type="text/css">
+.ui-panelgrid.form-elements .ui-grc-2 {
+	padding-left: 60px;
+}
+
+@media ( max-width :1024px) {
+	.ui-panelgrid.form-elements .ui-grc-2 {
+		padding-left: 20px;
+	}
+}
+
+@media ( max-width :640px) {
+	.ui-panelgrid.form-elements .ui-grc-2 {
+		padding-left: 6px;
+	}
+}
+
+.dialogDemo label {
+	line-height: 2.1em;
+}
+body{
+/*	background-image: url("../images/layout/fractal.png390dfractal.png390d.png");
+ 	background-color: grey
+ */}
+</style>
+ 
+<body>
+	<div class="layout-wrapper layout-menu-horizontal layout-fractal">
+
+		<div class="layout-topbar">
+			<div class="layout-topbar-logo">
+				<a href="dashboard.html"><img id="j_idt13"
+					src="../javax.faces.resource/images/logo.png390d.png?ln=prestige-layout"
+					alt="" class="logo" /></a>
+			</div>
+			<a class="layout-menu-button" href="#"> <i class="fa fa-bars"></i>
+			</a>
+			<ul class="layout-topbar-menu" role="menu">
+				<li class="layout-topbar-item"><a href="#"
+					class="layout-topbar-icon first"> <i
+						class="topbar-icon fa fa-cog"></i>
+				</a>
+					<ul>
+						<li><a href="#" class="layout-topbar-icon"> <i
+								class="topbar-icon fa fa-bookmark"></i>
+						</a>
+							<div class="layout-quickmenu-tooltip">
+								<div class="layout-quickmenu-tooltip-arrow"></div>
+								<div class="layout-quickmenu-tooltip-text">Bookmarks</div>
+							</div></li>
+						<li><a href="#" class="layout-topbar-icon"> <i
+								class="topbar-icon fa fa-bar-chart"></i>
+						</a>
+							<div class="layout-quickmenu-tooltip">
+								<div class="layout-quickmenu-tooltip-arrow"></div>
+								<div class="layout-quickmenu-tooltip-text">Statistics</div>
+							</div></li>
+						<li><a href="#" class="layout-topbar-icon"> <i
+								class="topbar-icon fa fa-sign-out"></i>
+						</a>
+							<div class="layout-quickmenu-tooltip">
+								<div class="layout-quickmenu-tooltip-arrow"></div>
+								<div class="layout-quickmenu-tooltip-text">Sign Out</div>
+							</div></li>
+					</ul></li>
+				<li class="layout-topbar-item"><a href="#"
+					class="layout-topbar-icon first"> <i
+						class="topbar-icon fa fa-calendar"></i>
+				</a>
+					<ul>
+						<li><a href="#" class="layout-topbar-text"> SUN </a></li>
+						<li><a href="#" class="layout-topbar-text"> MON </a></li>
+						<li><a href="#" class="layout-topbar-text"> TUE </a></li>
+					</ul></li>
+				<li role="menuitem" class="topbar-search layout-topbar-item"><a
+					href="#" class="layout-topbar-icon first"> <i
+						class="topbar-icon fa fa-search"></i>
+				</a> <input type="text" placeholder="Type to search..." /></li>
+				<li class="user-profile" role="menuitem"><a href="#">
+						<div class="user-profile-info profile-link">
+							<h:form>
+
+							</h:form>
+							<span class="user-profile-role">Design Ops</span>
+						</div> <img id="j_idt15"
+						src="../javax.faces.resource/images/avatar/avatar-ava.jpg390d.jpg?ln=prestige-layout"
+						alt="" class="logo" />
+				</a>
+					<ul>
+						<li class="profile-detail">
+							<div class="user-profile-info">
+								<img id="j_idt17"
+									src="../javax.faces.resource/images/avatar/avatar-ava.jpg390d.jpg?ln=prestige-layout"
+									alt="" class="logo" />
+								<div class="profile-info">
+
+
+
+									<span class="user-profile-role">Design Ops</span>
+								</div>
+								<a href="#" class="profile-detail-icon"> <i
+									class="fa fa-sign-out"></i>
+								</a>
+							</div>
+						</li>
+						<li><a href="#"> <i class="fa fa-user"></i>
+								<div class="menu-text">
+									<span class="menu-title">Profile</span> <span
+										class="menu-subtitle">Edit your profile</span>
+								</div> <i class="right-icon fa fa-angle-right"></i>
+						</a></li>
+						<li><a href="#"> <i class="fa fa-cog"></i>
+								<div class="menu-text">
+									<span class="menu-title">Settings</span> <span
+										class="menu-subtitle">Dashboard Settings</span>
+								</div> <i class="right-icon fa fa-angle-right"></i>
+						</a></li>
+						<li><a href="#"> <i class="fa fa-inbox"></i>
+								<div class="menu-text">
+									<span class="menu-title">Messages</span> <span
+										class="menu-subtitle">You have a
+										<div class="blue">3 new</div> messages
+									</span>
+								</div> <i class="right-icon fa fa-angle-right"></i>
+						</a></li>
+						<li><a href="#"> <i class="fa fa-globe"></i>
+								<div class="menu-text">
+									<span class="menu-title">Notification</span> <span
+										class="menu-subtitle">No new notification</span>
+								</div> <i class="right-icon fa fa-angle-right"></i>
+						</a></li>
+					</ul></li>
+			</ul>
+		</div>
+
+		<div class="layout-menu-container">
+			<div class="overlay-menu-button">
+				<div class="overlay-menu-button-bars">
+					<span></span> <span></span> <span></span>
+				</div>
+				<div class="overlay-menu-button-times">
+					<span></span> <span></span>
+				</div>
+			</div>
+			<form id="menuform" name="menuform" method="post"
+				action="https://www.primefaces.org/prestige/sample.xhtml"
+				enctype="application/x-www-form-urlencoded">
+				<input type="hidden" name="menuform" value="menuform" />
+
+				<div class="layout-menu-wrapper">
+					<ul id="menuform:j_idt21" class="layout-menu">
+						<li id="menuform:om_dashboard" role="menuitem"><a
+							href="dashboard.html"><i
+								class="fa fa-fw fa-dashboard fa-fw layout-menuitem-icon"></i><span
+								class="layout-menuitem-text">Dashboard</span></a></li>
+
+						 
+
+						 
+ 
+						<li id="menuform:om_buy" role="menuitem"><a href="../pages/showoffre.jsf"><i></i><span
+								class="layout-menuitem-text">Show offre</span></a></li>
+
+						<li id="menuform:om_buy" role="menuitem"><a href="../pages/addoffre.jsf"><i></i><span
+								class="layout-menuitem-text">Add offre</span></a></li>
+								<li id="menuform:om_buy" role="menuitem"><a href="../pages/addPub.jsf"><i></i><span
+								class="layout-menuitem-text">Add pub</span></a></li>
+								<li id="menuform:om_buy" role="menuitem"><a href="../pages/showPub.jsf"><i></i><span
+								class="layout-menuitem-text">show pub</span></a></li>
+								<li id="menuform:om_buy" role="menuitem"><a href="../pages/Chart.jsf"><i></i><span
+								class="layout-menuitem-text">Chart offre</span></a></li>
+						 
+						 
+					</ul>
+					<script id="menuform:j_idt21_s" type="text/javascript">$(function(){PrimeFaces.cw("Prestige","prestigeMenuWidget",{id:"menuform:j_idt21"});});</script>
+				</div>
+				<input type="hidden" name="javax.faces.ViewState"
+					id="j_id1:javax.faces.ViewState:0"
+					value="-5332551634193829057:6903227214716099206" autocomplete="off" />
+			</form>
+		</div>
+
+		<div class="layout-actionbar">
+			<div class="breadcrumb">
+				<div class="route-bar-breadcrumb">
+					<li>Components</li>
+					<li><a href="sample.html" class="ui-link ui-widget">Sample
+							Page</a></li>
+				</div>
+			</div>
+			<div class="actions ">
+				<ul>
+					<li>
+						<button>
+							<i class="fa fa-snowflake-o icon"></i>
+						</button>
+					</li>
+					<li>
+						<button>
+							<i class="fa fa-paper-plane icon"></i>
+						</button>
+					</li>
+					<li>
+						<button>
+							<i class="fa fa-file-code-o icon"></i>
+						</button>
+					</li>
+					<li>
+						<button>
+							<i class="fa fa-life-ring icon"></i>
+						</button>
+					</li>
+					<li>
+						<button>
+							<i class="fa fa-user icon"></i>
+						</button>
+					</li>
+
+				</ul>
+			</div>
+		</div>
+		<div class="layout-content">
+			<ui:insert name="content" />
+		</div>
+		<div class="layout-footer">
+			<div class="p-grid">
+				<div class="p-col-12 p-md-6  p-lg-3">
+					<span class="logo">Prestige</span>
+					<p>PrimeFaces Premium Template</p>
+				</div>
+				<div class="p-col-12 p-md-6 p-lg-3">
+					<span>LATEST TEMPLATES</span>
+					<div class="p-grid templates">
+						<ul>
+							<li><a href="#primefaces">Sapphire</a></li>
+							<li><a href="#primefaces">Roma</a></li>
+							<li><a href="#primefaces">Babylon</a></li>
+							<li><a href="#primefaces">Olympia</a></li>
+						</ul>
+						<ul>
+							<li><a href="#primefaces">Manhattan</a></li>
+							<li><a href="#primefaces">Ecuador</a></li>
+							<li><a href="#primefaces">Harmony</a></li>
+							<li><a href="#primefaces">California</a></li>
+						</ul>
+					</div>
+				</div>
+				<div class="p-col-12 p-md-6 p-lg-3">
+					<span>DEMOS</span>
+					<div class="p-grid">
+						<ul class="links">
+							<li><a href="#primefaces">PrimeFaces</a></li>
+							<li><a href="#primefaces">PrimeNG</a></li>
+							<li><a href="#primefaces">PrimeReact</a></li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="p-col-12 p-md-6 p-lg-3">
+					<span>SOCIAL</span>
+					<div class="p-grid">
+						<ul class="links social">
+							<li><a href="#twitter" class="icon-link"><i
+									class="fa fa-twitter icon"></i></a></li>
+							<li><a href="#facebook" class="icon-link"><i
+									class="fa fa-facebook icon"></i></a></li>
+							<li><a href="#github" class="icon-link"><i
+									class="fa fa-github icon"></i></a></li>
+						</ul>
+
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<a href="#" id="layout-config-button" class="layout-config-button">
+			<i class="fa fa-cog"></i>
+		</a>
+
+		<div id="layout-config" class="layout-config">
+			<div class="layout-config-content">
+				<a href="#" class="layout-config-close"> <i class="fa fa-times"></i>
+				</a>
+				<form id="config-form" name="config-form" method="post"
+					action="https://www.primefaces.org/prestige/sample.xhtml"
+					enctype="application/x-www-form-urlencoded">
+					<input type="hidden" name="config-form" value="config-form" />
+					<div id="config-form:config-form-tabs"
+						class="ui-tabs ui-widget ui-widget-content ui-corner-all ui-hidden-container ui-tabs-top"
+						data-widget="widget_config_form_config_form_tabs">
+						<ul
+							class="ui-tabs-nav ui-helper-reset ui-widget-header ui-corner-all"
+							role="tablist">
+							<li
+								class="ui-tabs-header ui-state-default ui-tabs-selected ui-state-active ui-corner-top"
+								role="tab" aria-expanded="true" aria-selected="true"
+								data-index="0"><a
+								href="#config-form:config-form-tabs:j_idt177" tabindex="-1">Component
+									Themes</a></li>
+							<li class="ui-tabs-header ui-state-default ui-corner-top"
+								role="tab" aria-expanded="false" aria-selected="false"
+								data-index="1"><a
+								href="#config-form:config-form-tabs:j_idt187" tabindex="-1">Layout
+									Themes</a></li>
+							<li class="ui-tabs-header ui-state-default ui-corner-top"
+								role="tab" aria-expanded="false" aria-selected="false"
+								data-index="2"><a
+								href="#config-form:config-form-tabs:j_idt197" tabindex="-1">Menu
+									Modes</a></li>
+						</ul>
+						<div class="ui-tabs-panels">
+							<div id="config-form:config-form-tabs:j_idt177"
+								class="ui-tabs-panel ui-widget-content ui-corner-bottom"
+								role="tabpanel" aria-hidden="false" data-index="0">
+								<div id="config-form:config-form-tabs:componentthemes-panel"
+									class="ui-outputpanel ui-widget">
+									<div class="p-grid">
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:0:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:0:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('amber-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:0:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/amber-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Amber Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:1:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:1:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('amber-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:1:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/amber-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Amber Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:2:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:2:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('amber-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:2:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/amber-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Amber Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:3:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:3:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('blue-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:3:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/blue-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Blue Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:4:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:4:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('blue-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:4:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/blue-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Blue Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:5:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:5:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('blue-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:5:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/blue-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Blue Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:6:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:6:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('bluegray-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:6:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/bluegray-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Blue Gray Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:7:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:7:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('bluegray-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:7:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/bluegray-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Blue Gray Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:8:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:8:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('bluegray-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:8:j_idt182"
+												src="../javax.faces.resource/images/configurator/theme/bluegray-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Blue Gray Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:9:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:9:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('brown-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:9:j_idt182"
+												src="../avax.faces.resource/images/configurator/theme/brown-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Brown Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:10:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:10:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('brown-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:10:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/brown-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Brown Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:11:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:11:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('brown-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:11:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/brown-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Brown Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:12:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:12:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('cyan-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:12:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/cyan-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Cyan Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:13:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:13:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('cyan-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:13:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/cyan-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Cyan Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:14:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:14:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('cyan-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:14:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/cyan-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Cyan Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:15:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:15:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deeporange-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:15:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deeporange-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Orange Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:16:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:16:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deeporange-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:16:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deeporange-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Orange Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:17:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:17:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deeporange-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:17:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deeporange-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Orange Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:18:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:18:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('gray-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:18:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/gray-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Gray Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:19:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:19:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('gray-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:19:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/gray-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Gray Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:20:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:20:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('gray-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:20:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/gray-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Gray Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:21:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:21:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('green-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:21:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/green-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Green Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:22:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:22:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('green-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:22:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/green-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Green Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:23:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:23:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('green-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:23:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/green-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Green Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:24:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:24:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('indigo-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:24:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/indigo-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Indigo Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:25:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:25:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('indigo-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:25:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/indigo-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Indigo Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:26:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:26:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('indigo-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:26:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/indigo-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Indigo Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:27:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:27:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('lime-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:27:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/lime-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Lime Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:28:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:28:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('lime-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:28:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/lime-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Lime Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:29:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:29:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('lime-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:29:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/lime-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Lime Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:30:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:30:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('pink-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:30:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/pink-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Pink Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:31:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:31:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('pink-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:31:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/pink-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Pink Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:32:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:32:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('pink-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:32:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/pink-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Pink Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:33:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:33:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deepblue-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:33:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deepblue-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Blue Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:34:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:34:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deepblue-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:34:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deepblue-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Blue Light" /> <i class="fa fa-check"></i></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:35:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:35:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deepblue-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:35:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deepblue-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Blue Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:36:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:36:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deeppurple-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:36:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deeppurple-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Purple Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:37:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:37:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deeppurple-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:37:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deeppurple-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Purple Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:38:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:38:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('deeppurple-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:38:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/deeppurple-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Deep Purple Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:39:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:39:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('teal-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:39:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/teal-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Teal Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:40:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:40:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('teal-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:40:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/teal-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Teal Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:41:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:41:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('teal-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:41:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/teal-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Teal Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:42:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:42:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('purple-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:42:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/purple-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Purple Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:43:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:43:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('purple-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:43:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/purple-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Purple Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:44:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:44:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('purple-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:44:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/purple-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Purple Dark" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:45:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:45:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('turquoise-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:45:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/turquoise-accent.svg390d.svg?ln=prestige-layout"
+												alt="" title="Turquoise Accent" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:46:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:46:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('turquoise-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:46:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/turquoise-light.svg390d.svg?ln=prestige-layout"
+												alt="" title="Turquoise Light" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt179:47:j_idt181"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt179:47:j_idt181&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:componentthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeComponentsTheme('turquoise-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt179:47:j_idt182"
+												src="javax.faces.resource/images/configurator/theme/turquoise-dark.svg390d.svg?ln=prestige-layout"
+												alt="" title="Turquoise Dark" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="config-form:config-form-tabs:j_idt187"
+								class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-helper-hidden"
+								role="tabpanel" aria-hidden="true" data-index="1">
+								<div id="config-form:config-form-tabs:layoutthemes-panel"
+									class="ui-outputpanel ui-widget">
+									<div class="p-grid">
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:0:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:0:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-aloe', 'turquoise-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:0:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/aloe.png390d.png?ln=prestige-layout"
+												alt="" title="Aloe" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:1:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:1:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-aqua', 'cyan-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:1:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/aqua.png390d.png?ln=prestige-layout"
+												alt="" title="Aqua" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:2:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:2:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-bangkok', 'turquoise-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:2:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/bangkok.png390d.png?ln=prestige-layout"
+												alt="" title="Bangkok" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:3:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:3:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-canvas', 'deepblue-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:3:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/canvas.png390d.png?ln=prestige-layout"
+												alt="" title="Canvas" /> <i class="fa fa-check"></i></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:4:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:4:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-cross', 'purple-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:4:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/cross.png390d.png?ln=prestige-layout"
+												alt="" title="Cross" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:5:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:5:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-dream', 'teal-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:5:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/dream.png390d.png?ln=prestige-layout"
+												alt="" title="Dream" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:6:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:6:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-emerald', 'teal-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:6:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/emerald.png390d.png?ln=prestige-layout"
+												alt="" title="Emerald" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:7:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:7:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-focus', 'turquoise-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:7:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/focus.png390d.png?ln=prestige-layout"
+												alt="" title="Focus" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:8:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:8:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-forest', 'turquoise-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:8:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/forest.png390d.png?ln=prestige-layout"
+												alt="" title="Forest" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:9:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:9:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-fractal', 'teal-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:9:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/fractal.png390d.png?ln=prestige-layout"
+												alt="" title="Fractal" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:10:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:10:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-gem', 'amber-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:10:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/gem.png390d.png?ln=prestige-layout"
+												alt="" title="Gem" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:11:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:11:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-green', 'green-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:11:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/green.png390d.png?ln=prestige-layout"
+												alt="" title="Green" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:12:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:12:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-indigo', 'indigo-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:12:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/indigo.png390d.png?ln=prestige-layout"
+												alt="" title="Indigo" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:13:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:13:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-joshua', 'pink-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:13:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/joshua.png390d.png?ln=prestige-layout"
+												alt="" title="Joshua" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:14:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:14:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-laser', 'indigo-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:14:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/laser.png390d.png?ln=prestige-layout"
+												alt="" title="Laser" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:15:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:15:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-lime', 'lime-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:15:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/lime.png390d.png?ln=prestige-layout"
+												alt="" title="Lime" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:16:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:16:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-maze', 'deeporange-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:16:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/maze.png390d.png?ln=prestige-layout"
+												alt="" title="Maze" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:17:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:17:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-metro', 'gray-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:17:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/metro.png390d.png?ln=prestige-layout"
+												alt="" title="Metro" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:18:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:18:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-milan', 'gray-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:18:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/milan.png390d.png?ln=prestige-layout"
+												alt="" title="Milan" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:19:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:19:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-night', 'bluegray-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:19:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/night.png390d.png?ln=prestige-layout"
+												alt="" title="Night" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:20:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:20:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-osterreich', 'cyan-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:20:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/osterreich.png390d.png?ln=prestige-layout"
+												alt="" title="Osterreich" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:21:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:21:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-palm', 'teal-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:21:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/palm.png390d.png?ln=prestige-layout"
+												alt="" title="Palm" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:22:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:22:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-deeppurple', 'deeppurple-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:22:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/deeppurple.png390d.png?ln=prestige-layout"
+												alt="" title="Deep Purple" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:23:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:23:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-petroleum', 'gray-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:23:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/petroleum.png390d.png?ln=prestige-layout"
+												alt="" title="Petroleum" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:24:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:24:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-rose', 'pink-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:24:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/rose.png390d.png?ln=prestige-layout"
+												alt="" title="Rose" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:25:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:25:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-sand', 'brown-dark');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:25:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/sand.png390d.png?ln=prestige-layout"
+												alt="" title="Sand" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:26:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:26:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-steel', 'blue-light');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:26:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/steel.png390d.png?ln=prestige-layout"
+												alt="" title="Steel" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:27:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:27:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-summer', 'teal-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:27:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/summer.png390d.png?ln=prestige-layout"
+												alt="" title="Summer" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:28:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:28:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-turquoise', 'turquoise-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:28:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/turquoise.png390d.png?ln=prestige-layout"
+												alt="" title="Turquoise" /></a>
+										</div>
+										<div class="p-col p-xl-2">
+											<a id="config-form:config-form-tabs:j_idt189:29:j_idt191"
+												href="#"
+												class="ui-commandlink ui-widget layout-config-option"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt189:29:j_idt191&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:layoutthemes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeLayout('layout-urban', 'deepblue-accent');}});return false;"><img
+												id="config-form:config-form-tabs:j_idt189:29:j_idt192"
+												src="javax.faces.resource/images/configurator/layout/urban.png390d.png?ln=prestige-layout"
+												alt="" title="Urban" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div id="config-form:config-form-tabs:j_idt197"
+								class="ui-tabs-panel ui-widget-content ui-corner-bottom ui-helper-hidden"
+								role="tabpanel" aria-hidden="true" data-index="2">
+								<div id="config-form:config-form-tabs:menumodes-panel"
+									class="ui-outputpanel ui-widget">
+									<div class="p-grid">
+										<div class="p-col p-col-fixed">
+											<a id="config-form:config-form-tabs:j_idt199" href="#"
+												class="ui-commandlink ui-widget layout-config-option layout-config-option-light"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt199&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:menumodes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeMenuToHorizontal();}});return false;"><img
+												id="config-form:config-form-tabs:j_idt200"
+												src="javax.faces.resource/images/configurator/menu/horizontal.png390d.png?ln=prestige-layout"
+												alt="" title="Horizontal" style="width: 100%" /> <i
+												class="fa fa-check"></i></a>
+										</div>
+										<div class="p-col p-col-fixed">
+											<a id="config-form:config-form-tabs:j_idt204" href="#"
+												class="ui-commandlink ui-widget layout-config-option layout-config-option-light"
+												onclick="PrimeFaces.ab({s:&quot;config-form:config-form-tabs:j_idt204&quot;,f:&quot;config-form&quot;,u:&quot;config-form:config-form-tabs:menumodes-panel&quot;,onco:function(xhr,status,args){PrimeFaces.PrestigeConfigurator.changeMenuToOverlay();}});return false;"><img
+												id="config-form:config-form-tabs:j_idt205"
+												src="javax.faces.resource/images/configurator/menu/overlay.png390d.png?ln=prestige-layout"
+												alt="" title="Overlay" style="width: 100%" /></a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<input type="hidden" id="config-form:config-form-tabs_activeIndex"
+							name="config-form:config-form-tabs_activeIndex" value="0"
+							autocomplete="off" />
+					</div>
+					<script id="config-form:config-form-tabs_s" type="text/javascript">$(function(){PrimeFaces.cw("TabView","widget_config_form_config_form_tabs",{id:"config-form:config-form-tabs",effectDuration:"normal",scrollable:false});});</script>
+					<input type="hidden" name="javax.faces.ViewState"
+						id="j_id1:javax.faces.ViewState:147"
+						value="-5332551634193829057:6903227214716099206"
+						autocomplete="off" />
+				</form>
+			</div>
+
+		</div>
+
+		<div class="layout-mask"></div>
+		<div id="j_idt211" class="layout-ajax-loader">
+			<div id="j_idt211_start" style="display: none">
+				<i class="fa fa-circle-o-notch fa-spin layout-ajax-loader-icon"
+					aria-hidden="true"></i>
+			</div>
+			<div id="j_idt211_complete" style="display: none"></div>
+		</div>
+		<script id="j_idt211_s" type="text/javascript">$(function(){PrimeFaces.cw("AjaxStatus","widget_j_idt211",{id:"j_idt211"});});</script>
+	</div>
+</body>
+
+
+<!-- Mirrored from www.primefaces.org/prestige/sample.xhtml by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 20 Oct 2019 18:15:53 GMT -->
+</html>

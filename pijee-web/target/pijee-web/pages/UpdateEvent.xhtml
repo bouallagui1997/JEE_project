@@ -1,0 +1,55 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui"
+template="/template/template.xhtml">
+<ui:param name="page_name" value="Update Event" />
+
+<ui:define name="content">
+
+<h:form id="form">
+
+<h:panelGrid columns="2">
+<h:outputText value="titre"></h:outputText>
+<h:inputText value="#{EventBean.title}"></h:inputText>
+
+<h:outputText value="detail"></h:outputText>
+<h:inputTextarea value="#{EventBean.detail}"></h:inputTextarea>
+
+<h:outputText value="date debut"></h:outputText>
+
+
+<p:calendar id="datetime" value="#{EventBean.datedebut}" pattern="MM/dd/yyyy HH:mm:ss" />
+
+<h:outputText value="date fin"></h:outputText>
+
+
+<p:calendar id="datetime1" value="#{EventBean.datefin}" pattern="MM/dd/yyyy HH:mm:ss" />
+
+<h:outputText value="category"></h:outputText>
+<h:selectOneMenu value="#{EventBean.category}">
+<f:selectItem itemLabel="Choisir category"
+itemValue=""/>
+<f:selectItems value="#{data.categories}" />
+</h:selectOneMenu>
+
+<h:commandButton action="#{EventBean.mettreAjourEvent()}" value="Mettre a jour
+event" />
+ 
+</h:panelGrid>
+</h:form>
+<h:message for="btn"/>
+
+
+
+
+
+</ui:define>
+
+
+
+</ui:composition>

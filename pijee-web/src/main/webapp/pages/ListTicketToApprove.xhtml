@@ -1,0 +1,54 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui"
+template="/templatecondidate/template.xhtml">
+<ui:param name="page_name" value="Accueil" />
+
+<ui:define name="title"> choisir une fonctionalite: </ui:define> 
+<ui:define name="content">
+
+
+<h:panelGroup>
+
+<h:form>
+
+
+<p:carousel value="#{TicketBean.tickets}" headerText="Ticket not approved  " var="ticket" itemStyle="height:800px;text-align:center" numVisible="1" easing="easeOutBounce" style="width:700px"  circular="true">
+        <h:panelGrid columns="2" style="width:100%" columnClasses="label,value">
+          
+            <f:facet name="header">
+                <p:graphicImage value="#{EventBean.getEventById(EventBean.getIdSelectedEvent()).pathfile}" width="200" height="200"/> 
+            </f:facet>
+ 
+            <h:outputText value="unique Identifier:" />
+            <h:outputText value="#{ticket.ticketId}" />
+           
+            <h:outputText value="event name: " />
+            <h:outputText value="#{EventBean.getEventById(EventBean.getIdSelectedEvent()).titleEvent}" />
+         
+         
+            <h:outputText value="event Description: " />
+            <h:outputText value="#{EventBean.getEventById(EventBean.getIdSelectedEvent()).detailEvent}" />
+       
+<br/>
+    <p:commandButton value="Approve Ticket Request" action="#{TicketBean.ApprovedTicket(ticket.ticketId)}" />
+        
+
+        </h:panelGrid>
+    </p:carousel> 
+    
+    <br/>
+    <p:commandButton value="return to index"  action="#{EventBean.Index()}" style="margin-right:20px;" />
+ <br/>
+    
+ 
+</h:form>
+
+
+</h:panelGroup>
+
+ <script src="include/Scripts/modernizr-2.8.3.min.js"></script>
+</ui:define>
+</ui:composition>

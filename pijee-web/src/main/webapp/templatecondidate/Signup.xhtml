@@ -1,0 +1,108 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+  <meta charset="utf-8"/>
+    <title>HRBoard</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+      <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+</h:head> 
+   <body>
+   
+   
+<div class="valign-wrapper" id="login-page">
+	
+	<div class="container">
+	
+	<div class="center-align">
+	
+	<div class="row">
+	<div class="col s6 offset-s3">
+	
+	<div class="card">
+	
+	<div class="card-content">
+	
+	<img class="responsive-img" style="max-width: 64px:" src="http://www.est.org.tn/images/Logo-Taraji_200px.png" />
+<div class="left-align">
+
+<h:form id="login-form">
+<p:growl autoUpdate="true"/>
+<div class="row">
+
+<div class="col s12 input-field">
+  <i class="material-icons prefix">account_circle</i>
+
+<h:inputText value="#{identity.user.name}" id="name" required="true" requiredMessage="Name is required!" />
+<h:outputLabel for="name" value="Name" /></div>
+<div class="col s12 input-field">
+<i class="material-icons prefix">assignment_turned_in</i>
+<h:inputText value="#{identity.user.login}" id="username" required="true" requiredMessage="Username is required!" />
+<h:outputLabel for="username" value="Username" /></div>
+<div class="col s12 input-field">
+<i class="material-icons prefix">mode_edit</i>
+<h:inputSecret  value="#{identity.user.password}" id="password" required="true" requiredMessage="Password is required!" />
+<h:outputLabel for="password" value="Password" /></div>
+<div class="col s12 input-field">
+<i class="material-icons prefix">email</i>
+<h:inputText   value="#{identity.user.email}" id="email" type="email" required="true" requiredMessage="Email is required!" />
+<h:outputLabel for="email" value="Email" />
+</div>
+<div class="input-field col s12">
+    <h:selectOneMenu value="#{identity.role}">
+				<f:selectItem itemLabel="type" />
+				<f:selectItem itemLabel="employee" itemValue="employee"/>
+				<f:selectItem itemLabel="condidate" itemValue="condidate"/>
+				</h:selectOneMenu>
+  </div>
+ 
+  
+<div class="col s6 input-field center-align">
+<h:commandLink action="#{identity.doSign()}" value="register" styleClass="btn btn-large " />
+
+ </div>
+
+
+</div>
+
+</h:form>
+
+</div>
+	</div>
+	</div>
+	
+	</div>
+	</div>
+	</div>
+	</div>
+		</div>
+ 
+        
+            <script type="text/javascript" src="#{request.contextPath}/resources1/js/jquery.min.js"></script>
+      
+      <script type="text/javascript" src="#{request.contextPath}/resources1/js/materialize.js"></script>
+      <script>
+      $(document).ready(function(){
+    	    $('.parallax').parallax();
+    	  });
+      </script>
+      <script >
+$(document).ready(function(){
+	  $('select').formSelect();
+	
+});
+	</script>
+
+    </body>
+
+</html>

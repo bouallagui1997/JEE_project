@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+		xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta charset="utf-8" />
+	<title>Human Resources Managing</title>
+	<link href="#{request.contextPath}/assets/css/zice.style.css" rel="stylesheet"
+		type="text/css" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/assets/components/bootstrap/bootstrap.css" />
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/assets/components/bootstrap/bootstrap-responsive.css" />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+      <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<!--   <script type="text/javascript" src="../assets/components/ui/jquery.ui.min.js"></script>  -->
+<!--   <script type="text/javascript" src="../assets/js/jquery.min.js"></script> -->
+</h:head>
+<body>
+
+	<ui:include src="../facelets/header.xhtml" />
+	<ui:include src="../facelets/menu.xhtml" />
+
+	<div id="content">
+
+		<div class="inner">
+
+			<div class="row-fluid">
+				<div class="span12 clearfix">
+					<div class="logo"></div>
+					<ul id="shortcut" class="clearfix">
+						<li><a href="#" title="Back To home"> <img
+								src="#{request.contextPath}/assets/images/icon/shortcut/home.png" alt="home" /><strong>Home</strong>
+						</a></li>
+
+						<li><a href="#" title="Messages"> <img
+								src="#{request.contextPath}/assets/images/icon/shortcut/mail.png" alt="messages" /><strong>Message</strong></a>
+							<div class="notification">10</div></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row-fluid">
+				<div class="widget  span12 clearfix">
+
+
+
+					<ui:insert name="content"></ui:insert>
+
+				</div>
+			</div>
+		</div>
+		<ui:include src="../facelets/footer.xhtml" />
+	</div>
+ <script type="text/javascript" src="#{request.contextPath}/resources1/js/jquery.min.js"></script>
+      
+      <script type="text/javascript" src="#{request.contextPath}/resources1/js/materialize.js"></script>
+</body>
+</html>

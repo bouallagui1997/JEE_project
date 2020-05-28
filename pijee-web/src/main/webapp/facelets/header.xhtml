@@ -1,0 +1,29 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"> 
+
+<h:head></h:head> 
+<body> 
+
+<div id="header" style="z-index: 47;">
+                <ul id="account_info" class="pull-right"> 
+
+            
+	    <h:form rendered="#{identity.isLogged}">
+	    You are logged in as #{identity.user.name} | 
+	    <h:commandLink action="#{identity.logout}" value="Logout" />
+	</h:form>
+	<h:form rendered="#{!identity.isLogged}">
+
+		<h:commandLink action="login" value="LOGIN" /> |
+		
+	</h:form>
+	
+                </ul>
+            </div>
+
+
+</body> 
+</html>

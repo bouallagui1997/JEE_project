@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui"
+template="/templatecondidate/template.xhtml">
+<ui:param name="page_name" value="pieCHART" />
+
+<ui:define name="content">
+
+<h:form>
+<p:commandButton value="return to index"  action="#{EventBean.Index()}" style="margin-right:20px;" />
+ <br/>
+<p:pieChart model="#{chartJsView.pieModel}" style="width: 100%; height: 500px;"/>
+</h:form>
+ <script src="include/Scripts/modernizr-2.8.3.min.js"></script>
+</ui:define>
+</ui:composition>

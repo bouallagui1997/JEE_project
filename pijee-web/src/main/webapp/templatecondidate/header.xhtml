@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+	<ui:composition >
+	<nav class="blue-grey darken-4">
+	
+    <div class="nav-wrapper">
+    
+      <a href="#" class="center brand-logo">CRM</a>
+     
+         <ul id="nav-mobile" class="right hide-on-med-and-down">
+         
+        <li>
+        <h:form rendered="#{identity.isLogged}">
+	   
+	    	    <h:commandLink action="#{identity.logout}" value="Logout" />
+	    
+	</h:form>
+        </li>
+        
+        <li>
+        <h:form rendered="#{identity.isLogged}">
+	    You are logged in as #{identity.user.name}
+	    
+	</h:form>
+        </li>
+      
+        
+      </ul>
+    </div>
+  </nav>
+	</ui:composition>
+</html>

@@ -1,0 +1,96 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" 
+xmlns:f="http://java.sun.com/jsf/core"
+xmlns:h="http://java.sun.com/jsf/html"
+xmlns:ui="http://java.sun.com/jsf/facelets"
+xmlns:p="http://primefaces.org/ui"
+template="/template/template.xhtml">
+<ui:param name="page_name" value="Accueil" />
+
+<ui:define name="title"> choisir une fonctionalite: </ui:define> 
+<ui:define name="content">
+
+
+<h:panelGroup>
+
+<h:form>
+<h:outputText value="connected as: #{loginBean.getLogin()}" />
+
+<h:commandLink value="Déconnexion" action="#{loginBean.doLogout()}" />
+
+</h:form>
+
+
+<h:form>
+<h:outputText value="search by title"></h:outputText>
+<h:inputText value="#{EventBean.searchByTitle}" ></h:inputText>
+<h:commandLink value="filter" action="#{EventBean.SearchByTitle()}" /> 
+</h:form>
+<h:form>
+<h:outputText value="filter by category"></h:outputText>
+<h:selectOneMenu value="#{EventBean.category}">
+<f:selectItem itemLabel="Choisir category"
+itemValue=""/>
+<f:selectItems value="#{data.categories}" />
+</h:selectOneMenu>
+
+<h:commandButton value="filter" action="#{EventBean.SearchByCategory()}" />
+</h:form>
+<h:form>
+<h:dataTable value="#{EventBean.events}" var="event" border="1">
+<h:column><f:facet name="header"><h:outputText value="title"/>
+</f:facet>
+<h:outputText value="#{event.titleEvent}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="detail"/>
+</f:facet>
+<h:outputText value="#{event.detailEvent}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="datedebut"/>
+</f:facet>
+<h:outputText value="#{event.dateDebut}" /></h:column>
+
+
+
+<h:column><f:facet name="header"><h:outputText value="datefin"/>
+</f:facet>
+<h:outputText value="#{event.dateFin}" /></h:column>
+
+<h:column><f:facet name="header"><h:outputText value="category"/>
+</f:facet>
+<h:outputText value="#{event.eventCategories}" /></h:column>
+
+
+<h:column>
+<f:facet name="header"><h:outputText value="Action" /></f:facet>
+<h:commandButton action="#{EventBean.removeEvent(event.eventId)}"
+value="Supprimer" />
+
+<h:commandButton action="#{EventBean.modifier(event)}" value="Modifier" />
+
+</h:column>
+ 
+ 
+ <h:column><f:facet name="header"><h:outputText value="reserve ticket"/>
+</f:facet>
+<h:commandButton action="#{EventBean.getticket(event.eventId)}"
+value="get now" />
+</h:column>
+</h:dataTable>
+</h:form>
+
+
+
+
+
+
+<h:form>
+<h:commandButton value="new Event" action="#{loginBean.addEvent()}" />
+</h:form>
+</h:panelGroup>
+
+
+</ui:define>
+
+
+
+</ui:composition>

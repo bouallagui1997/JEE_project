@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+       xmlns:p="http://primefaces.org/ui"> 
+
+<h:head>
+  <meta charset="utf-8"/>
+    <title>CRM</title>
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+     
+      <link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources1/css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      
+</h:head> 
+   <body>
+
+   <ui:include src="../templatecondidate/header.xhtml" />
+    <ul id="slide-out" class="sidenav ">
+    <li><div class="user-view">
+      <div class="background">
+        <img src="#{request.contextPath}/images/hd2.png"/>
+      </div>
+      <a href="#user"><img class="circle" src="#{request.contextPath}/images/img4.jpg"/></a>
+      <a href="#name"><span class="red-text name">#{identity.user.name}</span></a>
+      <a href="#email"><span class="red-text email">#{identity.user.email}</span></a>
+    </div></li>
+    <li><a href="ListProducts.xhtml"><i class="small  material-icons" >event_note</i>List Product</a></li>
+    <li><a href="ListPromotion.xhtml"  ><i class="small  material-icons" >assistant_photo</i>List Promotion</a></li>
+    <li><a href="promo.html"><i class="small  material-icons" >date_range</i>Promotion Product</a></li>
+    
+    
+  </ul>
+  <a href="#" data-target="slide-out" class="sidenav-trigger btn-floating pulse"><i class="material-icons">menu</i></a>
+          <div class="parallax-container">
+      <div class="parallax img"><img src="#{request.contextPath}/images/img2.jpg" /></div>
+    </div>
+    <div class="section white"/>
+      <div class="row container"/>
+     
+        <p class="grey-text text-darken-3 lighten-3"></p>	
+        <ui:insert name="content"></ui:insert>
+        
+
+    <div class="parallax-container">
+      <div class="parallax"><img class="img" src="#{request.contextPath}/images/img4.jpg" /></div>
+    </div>
+    
+    <ui:include src="../templatecondidate/footer.xhtml" />
+   
+      <!--JavaScript at end of body for optimized loading-->
+            <script type="text/javascript" src="#{request.contextPath}/resources1/js/jquery.min.js"></script>
+      
+      <script type="text/javascript" src="#{request.contextPath}/resources1/js/materialize.js"></script>
+      <script>
+      $(document).ready(function(){
+    	    $('.parallax').parallax();
+    	  });
+      </script>
+      <script >
+$(document).ready(function(){
+	  $('select').formSelect();
+	
+});
+	</script>
+	<script >
+$(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+</script>
+
+    </body>
+
+</html>
